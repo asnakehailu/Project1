@@ -1,1 +1,27 @@
 this is the second file
+
+import pandas as pd
+
+df = pd.read_csv(r"C:\Users\asnak\OneDrive\Desktop\excersie_data.csv")
+print(df.head())
+df.info()
+print("%"*20)
+n = df.isnull().sum()
+print(n)
+
+m = df.describe()
+print(m)
+
+# Categorical columns
+
+cat_col = [col for col in df.columns if df[col].dtype == 'object']
+print("\nCategorical columns:",cat_col)
+
+# Numerical columns
+num_col = [col for col in df.columns if df[col].dtype != 'object']
+print("\nNumerical columns:", num_col)
+
+# Check the total number of Unique Values in the Categorical Columns
+
+x = df.nunique()
+print("\nNumber of Unique Values:\n",x)
