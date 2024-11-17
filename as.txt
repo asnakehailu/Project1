@@ -1,1 +1,8 @@
 this is the first file
+
+SELECT  product_id, 
+	order_date, 
+	store_id, 
+	quantity
+FROM Tbl_product
+WEHER sales_id =! 5
